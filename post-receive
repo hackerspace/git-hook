@@ -6,6 +6,8 @@ import os, shutil
 cgitb.enable()
 
 DIR = '/tmp/'
+REPOURL = 'https://hacxman@github.com/hackerspace/website.git'
+REPONAME = 'website'
 
 print "Content-Type: text/html"     # HTML is following
 print                               # blank line, end of headers
@@ -31,11 +33,11 @@ try:
     # run deploy - 
     #   git clone $payload['repository']['url']
     #   git checkout $ref
-    os.system('git clone %s %s/%s' % (payload['repository']['url'], DIR, payload['repository']['name']))
+    os.system('git clone %s %s/%s' % (REPOURL, DIR, REPONAME))
 
     cwd = os.getcwd()
 
-    os.chdir('%s/%s' % (DIR, payload['repository']['name']))
+    os.chdir('%s/%s' % (DIR, REPONAME))
     os.system('git checkout %s' % payload['ref'])
     os.system('make install')
 
