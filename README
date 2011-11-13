@@ -1,1 +1,3 @@
 post-receive should be in /var/www/cgi/
+
+This branch is temporary, until we have signed tags.
