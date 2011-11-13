@@ -23,7 +23,7 @@ try:
   if payload is None:
     exit(0)
   
-  logger.info(payload)
+  #logger.info(payload)
   payload = json.loads(payload)
   
   ref = payload['ref']
